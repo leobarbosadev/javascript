@@ -6,6 +6,16 @@
     <title>Manipulando Dados</title>
 </head>
 <body>
+    <script>
+        var n1 = Number(window.prompt('Digite um número')) //parseFloat PARA NÚMEROS INTEIROS (COM VÍRGULA) Number() O PRÓPRIO JS VAI DEFINIR SE O NÚMERO VAI SER INTEIRO OU FLOAT
+        var n2 = Number.parseInt(window.prompt('Digite outro número'))
+        var soma = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${soma}`) //SE FIZER SOMENTE DESSA FORMA ACIMA, O JS VAI TRATAR OS DOIS NÚMEROS COMO string E FAZER A CONCATENAÇÃO EX SE COLOCARMOS 2 E 3 NO alert VAI SER EXIBIDO 23 E NÃO 5
+        
+        /*CONVERTENDO PARA string
+        soma.toString();
+        String(soma);*/
+    </script>
     
 </body>
 </html>
