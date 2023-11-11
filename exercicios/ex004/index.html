@@ -7,9 +7,21 @@
 </head>
 <body>
     <script>
-        var nome = window.prompt('Qual o seu nome?')
+       /* var nome = window.prompt('Qual o seu nome?')
         document.write(`Olá ${nome}, seu nome tem ${nome.length} letras <br>`)
-        document.write(`Tudo maiúsculo ${nome.toUpperCase()}`)
+        document.write(`Tudo maiúsculo ${nome.toUpperCase()} <br>`)*/
+
+        /*var salario = window.prompt('Qual o seu salário?')
+        document.write(salario)*/
+
+        var s = 1574.72
+        document.write(s.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}))
+        /*
+        ESSES MÉTODOS NÃO FUNCIONAM COM O window.prompt, SÓ FUNCIONA SE EU DEFINIR UM VALOR FIXO PARA A VARIÁVEL.
+        toFixed(2) -> DEFINE QUANTAS CASAS APÓS A VÍRGULA VAI SER EXIBIDA
+        toFixed(2).replace('.',',') -> TROCA O PONTO DAS CASAS DECIMAIS PARA VÍRGULA
+        toLocalaleString('pt-BR', {style:'currency' currency:'BRL'}) -> FORMATA O NÚMERO PARA MONETÁRIO, COM R$.
+        */
     </script>
     
 </body>
