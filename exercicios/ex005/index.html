@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,47 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Iniciando estudos DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
+    <div class="aviso">AVISO!!!</div>
+
+    <div class="teste">ESTOU TESTANTO SELETOR</div>
+    <div class="fim">ESTE É O FIM DOS TESTES</div>
+    <div class="fim">ESTE É O FIM DOS TESTES 2</div>
     <script>
-        document.write(window.document.url)
+        //SELECIONAR ELEMENTO POR MARCA
+        var p1 = window.document.getElementsByTagName('p')[1] //PEGA A PRIMEIRA TAG p CASO QUEIRA PEGAR A SEGUNDA COLOCAR 1 NO LUGAR DO 0 E ASSIM POR DIANTE
+        p1.style.color = 'green' //POSSO COLOCAR CORES EM HEXADECIMAL E EM CÓDIGO RGB
+
+        document.write(p1.innerHTML) //COM O innerHTML VAI PEGAR TODAS AS FORMATAÇÕES COM AS TAGS HTML, NO EXEMPLO USADO NO SEGUNDO PARÁGRAFO O DOM VAI VIR EM NEGRITO, SE EU UTILIZAR O innerText VAI TRAZER O DOM SEM ESTÁ EM NEGRITO.
+
+        //SELECIONAR ELEMENTO POR ID
+        var d = document.getElementById('msg') //SELECIONA QUALQUER TAG PELO SEU id
+        d.style.background = 'red'
+        d.innerText = 'Estou aguardando...'
+        /*PODEMOS COLOCAR O COMANDO COMPLETO EM APENAS 1 LINHA, DA SEGUINTE FORMA: 
+        window.document.getElementById('msg').innerText = 'Teste'*/
+
+        //SELECIONAR ELEMENTO POR NOME
+        var t = window.document.getElementsByName('teste')[0] //SELECIONA ELEMENTOS PELO NOME
+        /*PODEMOS COLOCAR O COMANDO COMPLETO EM APENAS UMA LINHA TAMBÉM
+        window.document.getElementsByName('teste')[1].style.color = 'brown'*/
+
+        //SELECIONAR ELEMENTO POR CLASSE
+        var a = document.getElementsByClassName('aviso')[0]
+        a.style.background = 'green'
+
+        //SELECIONAR ELEMENTO POR SELETOR
+        var b = document.querySelector('div#msg') //DENTRO DOS PARÊNTESES UTILIZO A SINTAXE DO CSS # PARA id E . PARA class 
+        b.style.color = 'orange'
+
+        
+        
     </script>
 </body>
+
 </html>
