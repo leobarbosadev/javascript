@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background-color: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"> <!-- AO INVÉS DE COLOCAR TODOS ESSE EVENTOS DENTRO DO HTML E DEIXA-LO MUITO POLUIDO, PODEMOS COLOCAR DIRETO NO JAVASCRIPT-->
+        Interaja...
+    </div>
+    <script>
+        //OS EVENTOS PODEM SER CONFIGURADOS DENTRO DO HTML OU DENTRO DO JAVASCRIPT
+
+        //PODE SER FEITO CRIANDO VARIÁVEL
+        // var a = document.getElementById('area')
+        // a.addEventListener('click', clicar)
+
+        document.getElementById('area').addEventListener('click', clicar)
+        document.getElementById('area').addEventListener('mouseenter', entrou)
+        document.getElementById('area').addEventListener('mouseout', saiu)
+
+        function clicar(){
+            document.getElementById('area').innerText = 'Clicou!'
+        }
+        function entrou(){
+            document.getElementById('area').innerText = 'Entrou!'
+            document.getElementById('area').style.background = 'blue'
+        }
+        function saiu(){
+            document.getElementById('area').innerHTML = 'Saiu!'
+            document.getElementById('area').style.background = 'red'
+        }
+    </script>
+</body>
+</html>
