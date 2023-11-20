@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="vel" id="vel"> Km/h <br>
+    <input type="button" id="verif" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        //FUNÇÃO PARA ATIVAR O BOTÃO AO PRECIONAR ENTER
+        document.addEventListener("keypress", function(enter){
+            if(enter.key === "Enter"){
+                var botao = document.querySelector("input#verif")
+                botao.click()
+            }
+        } )
+        
+        function calcular() {
+            var v = document.querySelector('input#vel')
+            var res = document.querySelector('div#res')
+            var vel = Number(v.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel} Km/h</strong></p>`
+            if(vel > 60){
+                res.innerHTML += `<p>Você foi <strong>MULTADO</strong> por execesso de velocidade</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com o sinto de segurança!</p>` //+= CONCATENA AS 2 string, SEM O + VAI SER EXIBIDO SOMENTE A SEGUNDA string.
+
+        }
+    </script>
+</body>
+
+</html>
