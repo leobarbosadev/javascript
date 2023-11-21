@@ -6,6 +6,34 @@
     <title>Nacionalidade</title>
 </head>
 <body>
-    
+    <h1>Qual sua nacionalidade?</h1>
+    Digite seu país: <input type="text" name="pais" id="pais"><br>
+    <input type="button" value="Verificar" id="verif" onclick="verificar()">
+    <div id="resultado"></div>
+    <script>
+        //FUNÇÃO PARA ATIVAR O BOTÃO AO PRECIONAR ENTER
+        document.addEventListener("keypress", function(enter){
+            if(enter.key === "Enter"){
+                var botao = document.querySelector("input#verif")
+                botao.click()
+            }
+        })
+
+        function verificar(){
+            var pais = document.querySelector('input#pais')
+            var result = document.querySelector('div#resultado')
+            var r = (pais.value)
+            result.innerHTML = `<p>Atualmente está morando no país <strong>${r}</strong></p>`
+            if(r === 'Brasil' || r === 'brasil'){
+                result.innerHTML += "<p>Você é Brasileiro</p>"
+            }else{
+                result.innerHTML += "<p>Você é extrangeiro</p>"
+            }
+
+        }
+
+
+    </script>
+
 </body>
 </html>
