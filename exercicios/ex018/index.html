@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Carrega horário atual</title>
+    <title>Tabuada</title>
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
-        <div>
-            Testando...
+        <div id="entrada">
+            <p>Número:
+                <input type="number" name="num" id="num">
+                <input type="button" value="Gerar Tabuada" onclick="gerar()">
+            </p>
         </div>
-        <div>
-
+        <div id="res">
+            <select name="tabuada" id="tabuada" size="10"><!--O size É PARA DEFINIR O TAMANHO DO SELECT, NESSE CASO ELE VAI TER UM TAMANHO DE 10 ITENS NÃO GERANDO ASSIM BARRA DE ROLAGEM-->
+                <option>Digite um número acima</option>
+            </select>
         </div>
     </section>
     <footer>
