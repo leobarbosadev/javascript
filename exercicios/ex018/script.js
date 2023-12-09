@@ -1,3 +1,11 @@
+//FUNÇÃO PARA ATIVAR O BOTÃO AO PRECIONAR ENTER
+document.addEventListener("keypress", function(enter){
+    if(enter.key === "Enter"){
+        var botao = document.querySelector("input#calc")
+        botao.click()
+    }
+} )
+
 function gerar(){
     var num = document.querySelector('input#num')
     var tab = document.querySelector('select#tabuada')
